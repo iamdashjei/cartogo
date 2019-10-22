@@ -16,6 +16,9 @@
                             {!! trans('titles.adminDropdownNav') !!}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item dashboard" href="{{ url('admin-dashboard') }}">
+                                Dashboard
+                            </a>
                             <a class="dropdown-item {{ (Request::is('roles') || Request::is('permissions')) ? 'active' : null }}" href="{{ route('laravelroles::roles.index') }}">
                                 {!! trans('titles.laravelroles') !!}
                             </a>
@@ -57,6 +60,8 @@
                             </a>
                         </div>
                     </li>
+                    
+                
                 @endrole
             </ul>
             {{-- Right Side Of Navbar --}}

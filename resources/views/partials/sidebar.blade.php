@@ -32,7 +32,7 @@
             <li class="header">MAIN NAVIGATION</li>
             <!-- Optionally, you can add icons to the links -->
             
-            <li{{(Request::segment(1) == 'dashboard') ? ' class=active' : ''}}><a href="{{url('/dashboard')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+            <li{{(Request::segment(1) == 'dashboard') ? ' class=active' : ''}}><a href="{{url('/admin-dashboard')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
             <li{{(Request::segment(1) == 'booking-route') ? ' class=active' : ''}}><a href="{{url('/booking-route')}}"><i class="fa fa-address-book"></i> <span>Booking Route</span></a></li>
             <li{{(Request::segment(1) == 'product') ? ' class=active' : ''}}><a href="{{url('/product')}}"><i class="fa fa-cubes"></i> <span>Product</span></a></li>
         </ul><!-- /.sidebar-menu -->

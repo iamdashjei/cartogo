@@ -130,6 +130,23 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
     Route::get('active-users', 'AdminDetailsController@activeUsers');
     Route::get('test', 'TestController@index');
     Route::get('booking-route', 'BookingRouteController@index');
+    Route::get('product', 'ProductController@index');
+    Route::get('admin-dashboard', 'AdminDashboardController@index');
+
+    // Add Product
+    Route::post('add-product', 'ProductController@store');
+    // Get Product Detail
+    Route::get('get-product-details', 'ProductController@get_product_details');
+    // Update Product Details
+    Route::post('update-product-details', 'ProductController@update_product_details');
+
+
+    // Add Booking Route
+    Route::post('add-booking', 'BookingRouteController@store');
+    // Get Booking Detail
+    Route::get('get-booking-details', 'BookingRouteController@get_booking_details');
+    // Update Booking Details
+    Route::post('update-booking-details', 'BookingRouteController@update_booking_details');
 });
 
 Route::redirect('/php', '/phpinfo', 301);

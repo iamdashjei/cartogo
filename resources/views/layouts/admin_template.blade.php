@@ -73,6 +73,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- REQUIRED JS SCRIPTS -->
 
+
 <!-- jQuery 2.1.3 -->
 <script src="{{ asset('/bower_components/jquery/dist/jquery.min.js') }}"></script>
 <!-- Bootstrap 3.3.2 JS -->
@@ -80,8 +81,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="{{ asset('/bower_components/admin-lte/dist/js/adminlte.min.js') }}" type="text/javascript"></script>
 
+
+<!-- SlimScroll -->
+<script src="{{asset('/bower_components/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+
+<!-- FastClick -->
+<script src="{{asset('/bower_components/fastclick/lib/fastclick.js')}}"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
       Both of these plugins are recommended to enhance the
       user experience -->
+<!-- growl notification -->
+<script src="{{asset('bower_components/remarkable-bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+<!-- DataTables -->
+<script src="{{asset('/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+<script src="{{asset('/js/product.js')}}"></script>
+<script src="{{asset('/js/booking_route.js')}}"></script>
+
+<script>
+     $(function () {
+            $('#product').DataTable()
+            $('#booking').DataTable()
+    })
+</script>
 </body>
 </html>
