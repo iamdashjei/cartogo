@@ -97,11 +97,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
 <script src="{{asset('/js/product.js')}}"></script>
 <script src="{{asset('/js/booking_route.js')}}"></script>
+<script src="{{asset('/js/outlet.js')}}"></script>
+<script src="{{asset('/js/vehicle.js')}}"></script>
 
 <script>
      $(function () {
             $('#product').DataTable()
             $('#booking').DataTable()
+            $('#outlet').DataTable()
+            $('#sales').DataTable()
+            $('#invoices').DataTable()
+            $('#vehicles').DataTable()
     })
 </script>
 </body>

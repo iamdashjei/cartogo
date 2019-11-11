@@ -114,6 +114,6 @@ class BookingRouteController extends Controller
         } 
 
 
-    return response()->json($validator->errors());
+       return response()->json($validator->errors());
     }
 }

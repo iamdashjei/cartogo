@@ -35,6 +35,10 @@
             <li{{(Request::segment(1) == 'dashboard') ? ' class=active' : ''}}><a href="{{url('/admin-dashboard')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
             <li{{(Request::segment(1) == 'booking-route') ? ' class=active' : ''}}><a href="{{url('/booking-route')}}"><i class="fa fa-address-book"></i> <span>Booking Route</span></a></li>
             <li{{(Request::segment(1) == 'product') ? ' class=active' : ''}}><a href="{{url('/product')}}"><i class="fa fa-cubes"></i> <span>Product</span></a></li>
+            <li{{(Request::segment(1) == 'outlet') ? ' class=active' : ''}}><a href="{{url('/outlet')}}"><i class="fa fa-building-o"></i> <span>Outlets</span></a></li>
+            <li{{(Request::segment(1) == 'sales') ? ' class=active' : ''}}><a href="{{url('/sales')}}"><i class="fa fa-line-chart"></i> <span>Sales</span></a></li>
+            <li{{(Request::segment(1) == 'invoices') ? ' class=active' : ''}}><a href="{{url('/invoices')}}"><i class="fa fa-fax"></i> <span>Invoices</span></a></li>
+            <li{{(Request::segment(1) == 'vehicles') ? ' class=active' : ''}}><a href="{{url('/vehicles')}}"><i class="fa fa-truck"></i> <span>Vehicles</span></a></li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

@@ -95,4 +95,18 @@ class ProductController extends Controller
 
         return response()->json($validator->errors());
     }
+
+    public function get_available_stocks(Request $request)
+    {
+        $regularYakult = DB::table('products')->select('products.stocks')->where('category', 'Regular Yakult')->get();
+        $yakultLight = DB::table('products')->select('products.stocks')->where('category', 'Yakult Light')->get();
+
+        $message = ['regularyakult' => $regularYakult, 'yakultlight' => $yakultLight];
+        return response()->json($message);
+    }
+
+    public function get_booking_route(Request $request)
+    {
+        // get booking route based on user assigned id
+    }
 }

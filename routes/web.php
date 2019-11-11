@@ -132,6 +132,26 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
     Route::get('booking-route', 'BookingRouteController@index');
     Route::get('product', 'ProductController@index');
     Route::get('admin-dashboard', 'AdminDashboardController@index');
+    
+    Route::get('outlet', 'OutletProfileController@index');
+    // Add Outlet
+    Route::post('add-outlet', 'OutletProfileController@store');
+    // Get Outlet Detail
+    Route::get('get-outlet-details', 'OutletProfileController@get_outlet_details');
+    // Update Outlet Details
+    Route::post('update-outlet-details', 'OutletProfileController@update_outlet_details');
+
+    Route::get('sales', 'SalesController@index');
+    Route::get('invoices', 'InvoiceController@index');
+    
+    Route::get('vehicles', 'VehicleController@index');
+    // Add Outlet
+    Route::post('add-vehicle', 'VehicleController@store');
+    // Get Outlet Detail
+    Route::get('get-vehicle-details', 'VehicleController@get_vehicle_details');
+    // Update Outlet Details
+    Route::post('update-vehicle-details', 'VehicleController@update_vehicle_details');
+
 
     // Add Product
     Route::post('add-product', 'ProductController@store');
