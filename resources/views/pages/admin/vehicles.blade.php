@@ -35,9 +35,9 @@
                         <td>{{ $item->year }}</td>
                         <td>{{ $item->lastkm_reading }} KM</td>
                         <td>{{ $item->lasttime_out }}</td>
-                        <td>{{ $item->lasttotal_load }}</td>
+                        <td>{{ $item->lasttotal_load }} Btls</td>
                         <td>{{ $item->lastpassenger }}</td>
-                        <td>{{ $item->shipping_weight }}</td>
+                        <td>{{ $item->shipping_weight }} kl</td>
                         <td>{{ $item->created_at }}</td>
                         <td>
                             <button type="button" class="btn btn-primary edit-vehicle" title="Edit" data-toggle="modal" data-target="#edit_vehicle" value="{{$item->id}}"><i class="fa fa-edit"></i></button>
@@ -224,7 +224,7 @@
                                                                     <div class="form-group">
                                                                         <div class="lasttime_out">
                                                                             <label for="lasttime_out">Last Time-out</label><span class="required">*</span>
-                                                                            <input type="date" name="lasttime_out" id="lasttime_out" class="form-control"/>
+                                                                            <input type="time" name="lasttime_out" id="lasttime_out" class="form-control"/>
                                                                         </div>
                                                                     </div>
                                                             </span>
@@ -426,7 +426,7 @@
                                                                             <div class="form-group">
                                                                                 <div class="edit_lasttime_out">
                                                                                     <label for="edit_lasttime_out">Last Time-out</label><span class="required">*</span>
-                                                                                    <input type="date" name="edit_lasttime_out" id="edit_lasttime_out" class="form-control"/>
+                                                                                    <input type="time" name="edit_lasttime_out" id="edit_lasttime_out" class="form-control"/>
                                                                                 </div>
                                                                             </div>
                                                                     </span>

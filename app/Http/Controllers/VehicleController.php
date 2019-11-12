@@ -57,13 +57,14 @@ class VehicleController extends Controller
             'fuel_capacity'     => 'required',
             'net_weight'     => 'required',
             'net_capacity'     => 'required',
-            'shipping_weight'     => 'required',
-            //'image'     => 'required|string'
+            'shipping_weight'     => 'required'
             
         ]);
 
+       // error_log(json_encode($request->all()));
         if($validator->passes())
             {
+               // error_log("Passed the validator");
                 $vehicle = new Vehicle;
                 $vehicle->platenumber = $request->platenumber;
                 $vehicle->lastkm_reading = (int) $request->lastkm_reading;
@@ -84,8 +85,7 @@ class VehicleController extends Controller
                 $vehicle->shipping_weight = floatval($request->shipping_weight);
                 $vehicle->image = null;
                 
-               // $product->save();
-
+              
                 if($vehicle->save()){
                     $message = ['success' => true];
                 } else {
@@ -171,7 +171,7 @@ class VehicleController extends Controller
 
         if($validator->passes())
         {
-            $vehicle = Vehicle::find($request->edit_vehicle_value);
+            $vehicle = Vehicle::find($request->vehicle_value);
             $vehicle->platenumber = $request->edit_platenumber;
             $vehicle->lastkm_reading = (int)$request->edit_lastkm_reading;
             $vehicle->lastpassenger = $request->edit_lastpassenger;

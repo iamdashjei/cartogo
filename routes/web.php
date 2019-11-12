@@ -146,7 +146,7 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
     
     Route::get('vehicles', 'VehicleController@index');
     // Add Outlet
-    Route::post('add-vehicle', 'VehicleController@store');
+    Route::post('add-vehicles', 'VehicleController@store');
     // Get Outlet Detail
     Route::get('get-vehicle-details', 'VehicleController@get_vehicle_details');
     // Update Outlet Details
@@ -159,6 +159,8 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
     Route::get('get-product-details', 'ProductController@get_product_details');
     // Update Product Details
     Route::post('update-product-details', 'ProductController@update_product_details');
+    // List Product 
+    Route::get('list-product', 'ProductController@list_product');
 
 
     // Add Booking Route

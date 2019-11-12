@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Booking;
 use App\Models\User;
+use App\Outlet;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -24,9 +25,10 @@ class BookingRouteController extends Controller
 
     public function index()
     {
+        $outlets = Outlet::all();
         $booking = Booking::all();
         $users = User::all();
-        return view('pages.admin.booking_route', compact('booking', 'users'));
+        return view('pages.admin.booking_route', compact('booking', 'users', 'outlets'));
     }
 
     public function store(Request $request)

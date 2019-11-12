@@ -61,12 +61,14 @@
 
                         <div class="row">
                             <span class="col-lg-4">
-                                    <div class="form-group">
-                                        <div class="store_name">
-                                            <label for="store_name">Store Name</label>
-                                            <input type="text" name="store_name" id="store_name" class="form-control"/>
-                                        </div>
-                                    </div>
+                                <label for="store_name">Store Name</label>
+                                <select name="store_name" class="form-control store_name" id="store_name">
+                                    <option></option>
+                                    @foreach ($outlets as $item)
+                                    <option value="{{$item->store_name}}">{{ucfirst($item->store_name)}}</option>
+                                    @endforeach
+                                    
+                                </select>
                             </span>    
 
                             <span class="col-lg-4">
@@ -179,13 +181,15 @@
 
                                 <div class="row">
                                     <span class="col-lg-4">
-                                            <div class="form-group">
-                                                <div class="edit_store_name">
-                                                    <label for="edit_store_name">Store Name</label>
-                                                    <input type="text" name="edit_store_name" id="edit_store_name" class="form-control"/>
-                                                </div>
-                                            </div>
-                                    </span>    
+                                        <label for="edit_store_name">Store Name</label>
+                                        <select name="edit_store_name" class="form-control edit_store_name" id="edit_store_name">
+                                            <option></option>
+                                            @foreach ($outlets as $item)
+                                            <option value="{{$item->store_name}}">{{ucfirst($item->store_name)}}</option>
+                                            @endforeach
+                                            
+                                        </select>
+                                    </span> 
         
                                     <span class="col-lg-4">
                                         <div class="form-group">

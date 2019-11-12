@@ -14,9 +14,9 @@ $(document).on('submit','#add-formvehicle',function (form) {
 
     let data = $('#add-formvehicle').serialize();
 
-    console.log(JSON.stringify(data));
+    //console.log(JSON.stringify(data));
     $.ajax({
-        'url'   : '/add-vehicle',
+        'url'   : '/add-vehicles',
         'headers': {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         'type'  : 'POST',
         'data'  : data,
@@ -114,7 +114,7 @@ $(document).on('submit','#update-vehicle',function (form) {
                 setTimeout(function(){
                     $('#edit_vehicle').modal('toggle');
                     $.notify({
-                            message: '1 vehicle Successfully Updated!'
+                            message: '1 Vehicle Successfully Updated!'
                         } ,{
                             type: 'success'
                         }

@@ -109,4 +109,30 @@ class ProductController extends Controller
     {
         // get booking route based on user assigned id
     }
+
+    public function list_product(Request $request)
+    {
+        $product = DB::table('products')
+        ->select('products.id', 'products.stocks', 'products.name', 'products.category', 'products.description')
+        ->get();
+        return json_decode($product);
+    }
+
+
+    public function deduct_yakult_light(Request $request)
+    {
+        $yakult_light = DB::table('products')
+        ->select('products.id', 'products.stocks', 'products.name', 'products.category', 'products.description')
+        ->where('products.name', 'Yakult Light')->get();
+        return json_decode($yakult_light);
+    }
+
+
+    public function deduct_yakult(Request $request)
+    {
+        $yakult = DB::table('products')
+        ->select('products.id', 'products.stocks', 'products.name', 'products.category', 'products.description')
+        ->where('products.name', 'Regular Yakult')->get();
+        return json_decode($yakult);
+    }
 }

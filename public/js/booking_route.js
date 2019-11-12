@@ -58,7 +58,7 @@ $(document).on('click','.edit-booking',function(){
         'cache' : false,
         success:function(result){
             $('#booking_value').val(result[0].id);
-            $('#edit_store_name').val(result[0].store_name);
+            $('#edit_store_name').val(result[0].store_name).change();
             $('#edit_address').val(result[0].address);
             $('#edit_description').val(result[0].description);
             $('#edit_schedule').val(result[0].scheduled).change();

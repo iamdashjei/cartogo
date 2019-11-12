@@ -15,7 +15,8 @@ class InvoiceController extends Controller
     public function index()
     {
         //
-        return view('pages.admin.invoices');
+        $invoice = Invoice::all();
+        return view('pages.admin.invoices', compact('invoice'));
     }
 
     /**

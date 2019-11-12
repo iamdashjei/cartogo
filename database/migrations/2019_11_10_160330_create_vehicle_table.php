@@ -16,24 +16,24 @@ class CreateVehicleTable extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             //
             $table->increments('id');
-            $table->string('platenumber')->default(null);
-            $table->bigInteger('lastkm_reading')->unsigned()->default(0);
-            $table->string('lastpassenger')->default(null);
-            $table->date('lasttime_out')->default(null);
-            $table->bigInteger('lasttotal_load')->unsigned()->default(0);
-            $table->string('brand')->default(null);
-            $table->string('model')->default(null);
-            $table->string('type')->default(null);
-            $table->string('year')->default(null);
-            $table->string('seat_no')->default(null);
-            $table->string('body_type')->default(null);
-            $table->string('engine')->default(null);
-            $table->string('fuel_type')->default(null);
-            $table->integer('fuel_capacity')->default(0);
-            $table->double('net_weight')->default(0);
-            $table->double('net_capacity')->default(0);
-            $table->double('shipping_weight')->default(0);
-            $table->string('image')->default(null);
+            $table->string('platenumber')->nullable();
+            $table->bigInteger('lastkm_reading')->nullable();
+            $table->string('lastpassenger')->nullable();
+            $table->time('lasttime_out')->nullable();
+            $table->bigInteger('lasttotal_load')->nullable();
+            $table->string('brand')->nullable();
+            $table->string('model')->nullable();
+            $table->string('type')->nullable();
+            $table->string('year')->nullable();
+            $table->string('seat_no')->nullable();
+            $table->string('body_type')->nullable();
+            $table->string('engine')->nullable();
+            $table->string('fuel_type')->nullable();
+            $table->integer('fuel_capacity')->nullable();
+            $table->double('net_weight')->nullable();
+            $table->double('net_capacity')->nullable();
+            $table->double('shipping_weight')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

@@ -15,7 +15,8 @@ class SalesController extends Controller
     public function index()
     {
         //
-        return view('pages.admin.sales');
+        $sales = Sales::all();
+        return view('pages.admin.sales', compact('sales'));
     }
 
     /**

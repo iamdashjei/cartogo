@@ -3,7 +3,6 @@
 @section('content')
 <h3>
 @yield('page_header', 'Invoices') &nbsp;
-<button type="button" class="btn bg-primary" data-toggle="modal" data-target="#add-invoices"><i class="fa fa-plus"></i> Add Invoice</button>
 </h3>
 
 <div class="box">
@@ -11,31 +10,38 @@
             <table id="invoices" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                    <th>Store Name</th>
-                    <th>Store Type</th>
-                    <th>Account</th>
-                    <th>Address</th>
-                    <th>Showcase No</th>
-                    <th>Size</th>
-                    <th>Contact Person</th>
+                    <th>Invoice No</th>
+                    <th>Total Sales</th>
+                    <th>Less Vat</th>
+                    <th>Net Vat</th>
+                    <th>Vat Sales</th>
+                    <th>Vat Amount</th>
+                    <th>Amount Due</th>
+                    <th>Payment Method</th>
+                    <th>Notes</th>
+                    <th>Outlet</th>
                     <th>Date</th>
-                    <th>Action</th>
+                    
                 </tr>
                 </thead>
                 <tbody>
-                   {{-- @foreach ($product as $item)
+                   @foreach ($invoice as $item)
                    <tr>
-                        <td>{{ $item->name }}</td>
-                        <td>{{ $item->category }}</td>
-                        <td>{{ $item->description }}</td>
-                        <td>{{ $item->stocks }}</td>
+                        <td>{{ $item->invoice_no }}</td>
+                        <td>{{ $item->total_sales }}</td>
+                        <td>{{ $item->less_vat }}</td>
+                        <td>{{ $item->net_vat }}</td>
+                        <td>{{ $item->vat_sales }}</td>
+                        <td>{{ $item->vat_amount }}</td>
+                        <td>{{ $item->amount_due }}</td>
+                        <td>{{ $item->payment_method }}</td>
+                        <td>{{ $item->notes }}</td>
+                        <td>{{ $item->outlet_id }}</td>
                         <td>{{ $item->created_at }}</td>
-                        <td>
-                            <button type="button" class="btn btn-primary edit-product" title="Edit" data-toggle="modal" data-target="#edit_product" value="{{$item->id}}"><i class="fa fa-edit"></i></button>
-                        </td>
+                        
                    </tr>
                        
-                   @endforeach --}}
+                   @endforeach
                 </tbody>
                 
             </table>
