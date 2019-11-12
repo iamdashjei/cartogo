@@ -118,4 +118,16 @@ class BookingRouteController extends Controller
 
        return response()->json($validator->errors());
     }
+
+
+    public function get_booking_list_by_user(Request $request)
+    {
+        $booking = DB::table('booking_routes')
+        ->leftJoin('users', 'booking_routes.user_id', '=', 'users.id')
+        ->select('booking_routes.id','booking_routes.store_name', 'booking_routes.description', 
+        'booking_routes.address', 'booking_routes.lat', 'booking_routes.lng', 'booking_routes.scheduled',
+         'booking_routes.user_id', 'booking_routes.route_date', 'users.name' )
+        ->where('booking_routes.id', $request->id)->get();
+        return json_decode($booking);
+    }
 }

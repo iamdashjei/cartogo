@@ -113,7 +113,7 @@ class ProductController extends Controller
     public function list_product(Request $request)
     {
         $product = DB::table('products')
-        ->select('products.id', 'products.stocks', 'products.name', 'products.category', 'products.description')
+        ->select('products.stocks', 'products.name')
         ->get();
         return json_decode($product);
     }
@@ -124,6 +124,16 @@ class ProductController extends Controller
         $yakult_light = DB::table('products')
         ->select('products.id', 'products.stocks', 'products.name', 'products.category', 'products.description')
         ->where('products.name', 'Yakult Light')->get();
+
+        
+        //error_log($yakult_light[0]->stocks);
+
+        $id = $yakult_light[0]->id;
+        $subtract_product = (int) $yakult_light[0]->stocks - (int) $request->units;
+        $product = Product::find($id);
+        $product->stocks = $subtract_product;
+        $product->save();
+        error_log($subtract_product);
         return json_decode($yakult_light);
     }
 
@@ -132,7 +142,14 @@ class ProductController extends Controller
     {
         $yakult = DB::table('products')
         ->select('products.id', 'products.stocks', 'products.name', 'products.category', 'products.description')
-        ->where('products.name', 'Regular Yakult')->get();
+        ->where('products.name', 'Yakult')->get();
+
+        $id = $yakult[0]->id;
+        $subtract_product = (int) $yakult[0]->stocks - (int) $request->units;
+        $product = Product::find($id);
+        $product->stocks = $subtract_product;
+        $product->save();
+        error_log($subtract_product);
         return json_decode($yakult);
     }
 }

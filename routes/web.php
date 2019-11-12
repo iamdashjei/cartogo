@@ -140,6 +140,7 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
     Route::get('get-outlet-details', 'OutletProfileController@get_outlet_details');
     // Update Outlet Details
     Route::post('update-outlet-details', 'OutletProfileController@update_outlet_details');
+    
 
     Route::get('sales', 'SalesController@index');
     Route::get('invoices', 'InvoiceController@index');
@@ -159,8 +160,7 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
     Route::get('get-product-details', 'ProductController@get_product_details');
     // Update Product Details
     Route::post('update-product-details', 'ProductController@update_product_details');
-    // List Product 
-    Route::get('list-product', 'ProductController@list_product');
+    
 
 
     // Add Booking Route
@@ -169,6 +169,7 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
     Route::get('get-booking-details', 'BookingRouteController@get_booking_details');
     // Update Booking Details
     Route::post('update-booking-details', 'BookingRouteController@update_booking_details');
+    
 });
 
 Route::redirect('/php', '/phpinfo', 301);

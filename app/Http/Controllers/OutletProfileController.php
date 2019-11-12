@@ -166,4 +166,12 @@ class OutletProfileController extends Controller
         ->where('outletprofiles.id', $request->id)->get();
         return json_decode($outlet);
     }
+
+    public function list_outlets(Request $request){
+        $outlets = DB::table('outletprofiles')
+        ->select('outletprofiles.id', 'outletprofiles.store_name',
+         'outletprofiles.type', 'outletprofiles.account', 'outletprofiles.address', 'outletprofiles.showcase_no', 'outletprofiles.size', 'outletprofiles.contact_person', 'outletprofiles.contact_no')
+        ->get();
+        return json_decode($outlets);
+    }
 }

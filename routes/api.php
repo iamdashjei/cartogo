@@ -23,5 +23,16 @@ Route::group([
     ], function() {
         Route::get('logout', 'Auth\AuthController@logout');
         Route::get('user', 'Auth\AuthController@user');
+        // List Product 
+        Route::get('list-product', 'ProductController@list_product');
+        // Deduct Product
+        Route::post('deduct-yakult-light', 'ProductController@deduct_yakult_light');
+        Route::post('deduct-yakult', 'ProductController@deduct_yakult');
+
+        // List Outlets
+        Route::get('list-outlets', 'OutletProfileController@list_outlets');
+
+        // List Booking by user
+        Route::post('list-booking', 'BookingRouteController@get_booking_list_by_user');
     });
 });

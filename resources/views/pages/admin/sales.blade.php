@@ -11,13 +11,14 @@
             <table id="sales" class="table table-bordered table-hover">
                 <thead>
                 <tr>
+                    <th>Outlet</th>
                     <th>Beginning Balance</th>
                     <th>Sales</th>
                     <th>Order</th>
                     <th>Ending Balance</th>
                     <th>Expiry Date</th>
                     <th>Signatory</th>
-                    <th>Outlet</th>
+                    
                     <th>Date</th>
                     
                 </tr>
@@ -25,13 +26,14 @@
                 <tbody>
                    @foreach ($sales as $item)
                    <tr>
+                        <td>{{ $item->outlet }}</td>
                         <td>{{ $item->beginning_balance }}</td>
                         <td>{{ $item->sales }}</td>
                         <td>{{ $item->order }}</td>
                         <td>{{ $item->ending_balance }}</td>
                         <td>{{ $item->expiry_date }}</td>
                         <td>{{ $item->signatory }}</td>
-                        <td>{{ $item->outlet }}</td>
+                        
                         <td>{{ $item->created_at }}</td>
                    </tr>
                        
