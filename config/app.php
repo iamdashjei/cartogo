@@ -176,6 +176,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Cornford\Googlmapper\MapperServiceProvider::class,
+
     ],
 
     /*
@@ -232,6 +234,7 @@ return [
         'Gravatar'      => Creativeorange\Gravatar\Facades\Gravatar::class,
         'Image'         => Intervention\Image\Facades\Image::class,
         'Uuid'          => Webpatser\Uuid\Uuid::class,
+        'Mapper'         => Cornford\Googlmapper\Facades\MapperFacade::class,
     ],
 
 ];

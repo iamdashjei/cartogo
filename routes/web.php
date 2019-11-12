@@ -169,6 +169,9 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
     Route::get('get-booking-details', 'BookingRouteController@get_booking_details');
     // Update Booking Details
     Route::post('update-booking-details', 'BookingRouteController@update_booking_details');
+
+    // Map
+    Route::get('map-view', 'MapController@index');
     
 });
 
