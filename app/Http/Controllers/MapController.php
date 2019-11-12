@@ -10,7 +10,7 @@ class MapController extends Controller
     //
     public function index()
     {
-        Mapper::map(53.381128999999990000, -1.470085000000040000);
+        Mapper::map(15.1623082, 120.5976015);
 
         return view('pages.admin.map');
     }
