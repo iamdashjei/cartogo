@@ -124,8 +124,11 @@
                                                 <label for="type">Type</label>
                                                 <select name="type" class="form-control type" id="type">
                                                     <option></option>
-                                                    <option>Groceries</option>
-                                                    <option>Center</option>
+                                                    <option>Sari-sari</option>
+                                                    <option>Grocery</option>
+                                                    <option>Convenient</option>
+                                                    <option>Mini Mart</option>
+                                                    <option>Key Account</option>
                                                    
                                                 </select>
                                             </div>
@@ -140,6 +143,7 @@
                                                 <option></option>
                                                 <option>Cash</option>
                                                 <option>Credit</option>
+                                                <option>Cheque</option>
                                                
                                             </select>
                                         </div>
@@ -239,8 +243,11 @@
                                                             <label for="edit_type">Type</label>
                                                             <select name="edit_type" class="form-control type" id="edit_type">
                                                                 <option></option>
-                                                                <option>Groceries</option>
-                                                                <option>Center</option>
+                                                    <option>Sari-sari</option>
+                                                    <option>Grocery</option>
+                                                    <option>Convenient</option>
+                                                    <option>Mini Mart</option>
+                                                    <option>Key Account</option>
                                                                
                                                             </select>
                                                         </div>
@@ -255,6 +262,7 @@
                                                             <option></option>
                                                             <option>Cash</option>
                                                             <option>Credit</option>
+                                                            <option>Cheque</option>
                                                            
                                                         </select>
                                                     </div>
