@@ -127,7 +127,8 @@ class BookingRouteController extends Controller
         ->select('booking_routes.id','booking_routes.store_name', 'booking_routes.description', 
         'booking_routes.address', 'booking_routes.lat', 'booking_routes.lng', 'booking_routes.scheduled',
          'booking_routes.user_id', 'booking_routes.route_date', 'users.name' )
-        ->where('booking_routes.user_id', $request->id)->get();
+        ->where('booking_routes.user_id', $request->id)
+        ->where('booking_routes.scheduled', $request->scheduled)->get();
         return json_decode($booking);
     }
 }
