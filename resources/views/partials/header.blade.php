@@ -2,7 +2,7 @@
 <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo"><b>Lacto-B</b> Inc.</a>
+    <a href="index2.html" class="logo"><b>Car</b>ToGo</a>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">

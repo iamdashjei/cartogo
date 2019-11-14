@@ -6,7 +6,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Lacto-B Incorporated</title>
+    <title>CarToGo</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     {{-- CSRF Token --}}
@@ -99,6 +99,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('/js/booking_route.js')}}"></script>
 <script src="{{asset('/js/outlet.js')}}"></script>
 <script src="{{asset('/js/vehicle.js')}}"></script>
+<script src="{{asset('/js/towing.js')}}"></script>
+<script src="{{asset('/js/mechanic.js')}}"></script>
+<script src="{{asset('/js/carwash.js')}}"></script>
 
 <script>
      $(function () {
@@ -108,6 +111,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $('#sales').DataTable()
             $('#invoices').DataTable()
             $('#vehicles').DataTable()
+            $('#towing').DataTable()
+            $('#carwash').DataTable()
+            $('#mechanic').DataTable()
     })
 </script>
 </body>

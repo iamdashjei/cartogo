@@ -173,6 +173,34 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
     // Map
     Route::get('map-view', 'MapController@index');
     
+
+    Route::get('carwash', 'CarwashController@index');
+    // Add Carwash
+    Route::post('add-carwash', 'CarwashController@store');
+    // Get Carwash
+    Route::get('get-carwash-details', 'CarwashController@get_carwash_details');
+    // Update Carwash
+    Route::post('update-carwash-details', 'CarwashController@update_carwash_details');
+    
+
+    Route::get('mechanic', 'MechanicController@index');
+     // Add Carwash
+     Route::post('add-mechanic', 'MechanicController@store');
+     // Get Carwash
+     Route::get('get-mechanic-details', 'MechanicController@get_mechanic_details');
+     // Update Carwash
+     Route::post('update-mechanic-details', 'MechanicController@update_mechanic_details');
+     
+
+    Route::get('towing', 'TowingController@index');
+    // Add Carwash
+    Route::post('add-towing', 'TowingController@store');
+    // Get Carwash
+    Route::get('get-towing-details', 'TowingController@get_towing_details');
+    // Update Carwash
+    Route::post('update-towing-details', 'TowingController@update_towing_details');
+     
+    
 });
 
 Route::redirect('/php', '/phpinfo', 301);
