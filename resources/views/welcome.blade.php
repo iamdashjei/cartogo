@@ -82,7 +82,7 @@
             @endif
             <div class="content">
                 <div class="title m-b-md">
-                    Lacto-B Incorporated
+                    CarToGo
                 </div>
                 
             </div>
