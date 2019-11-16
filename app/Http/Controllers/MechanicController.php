@@ -165,4 +165,12 @@ class MechanicController extends Controller
 
       return response()->json($validator->errors());
     }
+
+    public function get_all_mechanics(Request $request)
+    {
+        $mechanic = DB::table('mechanics')
+        ->select('mechanics.id', 'mechanics.name', 'mechanics.address', 'mechanics.service', 'mechanics.lat', 'mechanics.lng',  'mechanics.specialty', 'mechanics.notes')
+        ->get();
+        return json_decode($mechanic);
+    }
 }

@@ -215,4 +215,15 @@ class VehicleController extends Controller
         ->where('vehicles.id', $request->id)->get();
         return json_decode($vehicle);
     }
+
+    public function get_all_vehicle(Request $request)
+    {
+        $vehicle = DB::table('vehicles')
+        ->select('vehicles.id', 'vehicles.platenumber', 'vehicles.lastkm_reading', 'vehicles.lastpassenger', 'vehicles.lasttime_out', 'vehicles.lasttotal_load',
+          'vehicles.brand', 'vehicles.model', 'vehicles.type', 'vehicles.year',
+          'vehicles.seat_no', 'vehicles.body_type', 'vehicles.engine', 'vehicles.fuel_type',
+          'vehicles.fuel_capacity', 'vehicles.net_weight', 'vehicles.net_capacity', 'vehicles.shipping_weight')
+        ->get();
+        return json_decode($vehicle);
+    }
 }

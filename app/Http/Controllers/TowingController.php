@@ -165,4 +165,12 @@ class TowingController extends Controller
 
       return response()->json($validator->errors());
     }
+
+    public function get_all_towing(Request $request)
+    {
+        $towing = DB::table('towings')
+        ->select('towings.id', 'towings.company', 'towings.address', 'towings.amount', 'towings.lat', 'towings.lng',  'towings.branch', 'towings.notes')
+        ->get();
+        return json_decode($towing);
+    }
 }

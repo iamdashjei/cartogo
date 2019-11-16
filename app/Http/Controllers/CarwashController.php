@@ -178,4 +178,12 @@ class CarwashController extends Controller
 
       return response()->json($validator->errors());
     }
+
+    public function get_all_carwash()
+    {
+        $carwash = DB::table('carwashes')
+        ->select('carwashes.id', 'carwashes.address', 'carwashes.service', 'carwashes.lat', 'carwashes.lng', 'carwashes.amount', 'carwashes.payment_method', 'carwashes.notes')
+        ->get();
+        return json_decode($carwash);
+    }
 }
