@@ -43,6 +43,7 @@ class AuthController extends Controller
             'password' => 'required|string'
         ]);
         $user = new User;
+        $user->name = $request->fName." ". $request->lName;
         $user->first_name = $request->fName;
         $user->last_name = $request->lName;
         $user->email = $request->email;
