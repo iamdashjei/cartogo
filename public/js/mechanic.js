@@ -65,7 +65,7 @@ $(document).on('click','.edit-mechanic',function(){
             $('#edit_latitude').val(result[0].lat);
             $('#edit_longitude').val(result[0].lng);
             $('#edit_notes').val(result[0].notes);
-            
+            $('#edit_mobile_no').val(result[0].mobile_no);
            
            
            //console.log('Result' + JSON.stringify(result));

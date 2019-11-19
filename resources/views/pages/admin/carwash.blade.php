@@ -18,6 +18,7 @@
                     <th>Amount</th>
                     <th>Payment Method</th>
                     <th>Notes</th>
+                    <th>Contact No</th>
                     <th>Date</th>
                     <th>Action</th>
                     
@@ -32,7 +33,7 @@
                         <td>{{ $item->amount }}</td>
                         <td>{{ $item->payment_method }}</td>
                         <td>{{ $item->notes }}</td>
-                        
+                        <td>{{ $item->mobile_no }}</td>
                         <td>{{ $item->created_at }}</td>
                         <td>
                             <button type="button" class="btn btn-primary edit-carwash" title="Edit" data-toggle="modal" data-target="#edit_carwash" value="{{$item->id}}"><i class="fa fa-edit"></i></button>
@@ -111,6 +112,15 @@
                                     <div class="notes">
                                         <label for="notes">Notes</label> <span class="required">*</span>
                                         <input type="text" name="notes" id="notes" class="form-control"/>
+                                    </div>
+                                </div>
+                            </span>
+
+                            <span class="col-lg-4">
+                                <div class="form-group">
+                                    <div class="mobile_no">
+                                        <label for="mobile_no">Contact No</label> <span class="required">*</span>
+                                        <input type="text" name="mobile_no" id="mobile_no" class="form-control"/>
                                     </div>
                                 </div>
                             </span>
@@ -230,6 +240,15 @@
                                         <div class="edit_service">
                                             <label for="edit_service">Notes</label> <span class="required">*</span>
                                             <input type="text" name="edit_service" id="edit_service" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </span>
+
+                                <span class="col-lg-4">
+                                    <div class="form-group">
+                                        <div class="edit_mobile_no">
+                                            <label for="edit_mobile_no">Contact No</label> <span class="required">*</span>
+                                            <input type="text" name="edit_mobile_no" id="edit_mobile_no" class="form-control"/>
                                         </div>
                                     </div>
                                 </span>

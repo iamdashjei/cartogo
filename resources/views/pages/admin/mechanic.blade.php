@@ -17,6 +17,7 @@
                     <th>Service</th>
                     <th>Specialty</th>
                     <th>Notes</th>
+                    <th>Contact No</th>
                     <th>Date</th>
                     <th>Action</th>
                     
@@ -30,6 +31,7 @@
                         <td>{{ $item->service }}</td>
                         <td>{{ $item->specialty }}</td>
                         <td>{{ $item->notes }}</td>
+                        <td>{{ $item->mobile_no }}</td>
                         
                         <td>{{ $item->created_at }}</td>
                         
@@ -122,6 +124,15 @@
 
                             <span class="col-lg-4">
                                 <div class="form-group">
+                                        <div class="mobile_no">
+                                            <label for="mobile_no">Contact No</label>
+                                            <input type="text" name="mobile_no" id="mobile_no" class="form-control"/>
+                                        </div>
+                                    </div>
+                            </span>
+
+                            <span class="col-lg-4">
+                                <div class="form-group">
                                         <div class="service">
                                             <label for="service">Service</label>
                                             <input type="text" name="service" id="service" class="form-control"/>
@@ -210,6 +221,14 @@
                                                 </div>
                                             </div>
                                 </span>
+                                <span class="col-lg-4">
+                                    <div class="form-group">
+                                            <div class="edit_mobile_no">
+                                                <label for="edit_mobile_no">Contact No</label>
+                                                <input type="text" name="edit_mobile_no" id="edit_mobile_no" class="form-control"/>
+                                            </div>
+                                        </div>
+                                 </span>
 
                                 <span class="col-lg-4">
                                     <div class="form-group">

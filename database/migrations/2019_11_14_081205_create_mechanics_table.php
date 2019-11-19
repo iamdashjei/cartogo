@@ -22,6 +22,7 @@ class CreateMechanicsTable extends Migration
             $table->string('lat')->nullable();
             $table->string('lng')->nullable();
             $table->string('specialty')->nullable();
+            $table->string('mobile_no')->nullable();
             $table->string('notes')->nullable();
             $table->timestamps();
         });

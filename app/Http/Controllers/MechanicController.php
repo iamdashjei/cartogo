@@ -47,7 +47,8 @@ class MechanicController extends Controller
             'address'      => 'required|string',
             'service'      => 'required|string',
             'notes'      => 'required|string',
-            'specialty'      => 'required|string'
+            'specialty'      => 'required|string',
+            'mobile_no'      => 'required|string'
         ]);
 
         if($validator->passes())
@@ -60,7 +61,7 @@ class MechanicController extends Controller
             $mechanic->service = $request->service;
             $mechanic->specialty = $request->specialty;
             $mechanic->notes = $request->notes;
-            
+            $mechanic->mobile_no = $request->mobile_no;
 
             if($mechanic->save()){
                 $message = ['success' => true];
@@ -123,7 +124,7 @@ class MechanicController extends Controller
     public function get_mechanic_details(Request $request)
     {
         $mechanic = DB::table('mechanics')
-        ->select('mechanics.id', 'mechanics.name', 'mechanics.address', 'mechanics.service', 'mechanics.lat', 'mechanics.lng',  'mechanics.specialty', 'mechanics.notes')
+        ->select('mechanics.id', 'mechanics.name', 'mechanics.address', 'mechanics.service', 'mechanics.lat', 'mechanics.lng',  'mechanics.specialty', 'mechanics.notes', 'mechanics.mobile_no')
         ->where('mechanics.id', $request->id)->get();
         return json_decode($mechanic);
     }
@@ -138,7 +139,8 @@ class MechanicController extends Controller
             'edit_address'      => 'required|string',
             'edit_service'      => 'required|string',
             'edit_notes'      => 'required|string',
-            'edit_specialty'      => 'required|string'
+            'edit_specialty'      => 'required|string',
+            'edit_mobile_no'      => 'required|string'
         ]);
 
         if($validator->passes())
@@ -151,7 +153,7 @@ class MechanicController extends Controller
             $mechanic->service = $request->edit_service;
             $mechanic->specialty = $request->edit_specialty;
             $mechanic->notes = $request->edit_notes;
-            
+            $mechanic->mobile_no = $request->edit_mobile_no;
 
             if($mechanic->save()){
                 $message = ['success' => true];
@@ -169,7 +171,7 @@ class MechanicController extends Controller
     public function get_all_mechanics(Request $request)
     {
         $mechanic = DB::table('mechanics')
-        ->select('mechanics.id', 'mechanics.name', 'mechanics.address', 'mechanics.service', 'mechanics.lat', 'mechanics.lng',  'mechanics.specialty', 'mechanics.notes')
+        ->select('mechanics.id', 'mechanics.name', 'mechanics.address', 'mechanics.service', 'mechanics.lat', 'mechanics.lng',  'mechanics.specialty', 'mechanics.notes', 'mechanics.mobile_no')
         ->get();
         return json_decode($mechanic);
     }

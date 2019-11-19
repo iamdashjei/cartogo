@@ -64,6 +64,7 @@ $(document).on('click','.edit-towing',function(){
             $('#edit_address').val(result[0].address);
             $('#edit_amount').val(result[0].amount);
             $('#edit_notes').val(result[0].notes);
+            $('#edit_mobile_no').val(result[0].mobile_no);
             $('#edit_branch').val(result[0].branch);
            //console.log('Result' + JSON.stringify(result));
 

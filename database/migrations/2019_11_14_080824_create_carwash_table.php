@@ -23,6 +23,7 @@ class CreateCarwashTable extends Migration
             $table->string('lng')->nullable();
             $table->bigInteger('amount')->nullable();
             $table->string('payment_method')->nullable();
+            $table->string('mobile_no')->nullable();
             $table->string('notes')->nullable();
             $table->timestamps();
         });

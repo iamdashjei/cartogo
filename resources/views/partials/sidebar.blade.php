@@ -42,7 +42,7 @@
             <li{{(Request::segment(1) == 'carwash') ? ' class=active' : ''}}><a href="{{url('/carwash')}}"><i class="fa fa-car"></i> <span>Carwash</span></a></li>
             <li{{(Request::segment(1) == 'mechanic') ? ' class=active' : ''}}><a href="{{url('/mechanic')}}"><i class="fa fa-users"></i> <span>Mechanic</span></a></li>
             <li{{(Request::segment(1) == 'towing') ? ' class=active' : ''}}><a href="{{url('/towing')}}"><i class="fa fa-ticket"></i> <span>Towing</span></a></li>
-            <li{{(Request::segment(1) == 'vehicles') ? ' class=active' : ''}}><a href="{{url('/vehicles')}}"><i class="fa fa-truck"></i> <span>Vehicles</span></a></li>
+            {{-- <li{{(Request::segment(1) == 'vehicles') ? ' class=active' : ''}}><a href="{{url('/vehicles')}}"><i class="fa fa-truck"></i> <span>Vehicles</span></a></li> --}}
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

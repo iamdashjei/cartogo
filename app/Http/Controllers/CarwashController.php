@@ -57,7 +57,8 @@ class CarwashController extends Controller
             'service'      => 'required|string',
             'notes'      => 'required|string',
             'amount'      => 'required',
-            'payment_method'      => 'required|string'
+            'payment_method'      => 'required|string',
+            'mobile_no'      => 'required|string'
         ]);
 
         if($validator->passes())
@@ -70,6 +71,7 @@ class CarwashController extends Controller
             $carwash->service = $request->service;
             $carwash->notes = $request->notes;
             $carwash->amount = $request->amount;
+            $carwash->mobile_no = $request->mobile_no;
             $carwash->payment_method = $request->payment_method;
             
 
@@ -134,7 +136,7 @@ class CarwashController extends Controller
     public function get_carwash_details(Request $request)
     {
         $carwash = DB::table('carwashes')
-        ->select('carwashes.id', 'carwashes.address', 'carwashes.service', 'carwashes.lat', 'carwashes.lng', 'carwashes.amount', 'carwashes.payment_method', 'carwashes.notes')
+        ->select('carwashes.id', 'carwashes.address', 'carwashes.service', 'carwashes.lat', 'carwashes.lng', 'carwashes.amount', 'carwashes.payment_method', 'carwashes.notes', 'carwashes.mobile_no')
         ->where('carwashes.id', $request->id)->get();
         return json_decode($carwash);
     }
@@ -150,7 +152,8 @@ class CarwashController extends Controller
             'edit_service'      => 'required|string',
             'edit_notes'      => 'required|string',
             'edit_amount'      => 'required',
-            'edit_payment_method'      => 'required|string'
+            'edit_payment_method'      => 'required|string',
+            'edit_mobile_no'      => 'required|string'
         ]);
 
         if($validator->passes())
@@ -163,6 +166,7 @@ class CarwashController extends Controller
             $carwash->service = $request->edit_service;
             $carwash->amount = $request->edit_amount;
             $carwash->notes = $request->edit_notes;
+            $carwash->mobile_no = $request->edit_mobile_no;
             $carwash->payment_method = $request->edit_payment_method;
             
 
@@ -182,7 +186,7 @@ class CarwashController extends Controller
     public function get_all_carwash()
     {
         $carwash = DB::table('carwashes')
-        ->select('carwashes.id', 'carwashes.address', 'carwashes.service', 'carwashes.lat', 'carwashes.lng', 'carwashes.amount', 'carwashes.payment_method', 'carwashes.notes')
+        ->select('carwashes.id', 'carwashes.address', 'carwashes.service', 'carwashes.lat', 'carwashes.lng', 'carwashes.amount', 'carwashes.payment_method', 'carwashes.notes', 'carwashes.mobile_no')
         ->get();
         return json_decode($carwash);
     }

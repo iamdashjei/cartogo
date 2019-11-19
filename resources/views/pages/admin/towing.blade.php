@@ -18,6 +18,7 @@
                     <th>Service Amount</th>
                     <th>Branch</th>
                     <th>Notes</th>
+                    <th>Contact No</th>
                     <th>Date</th>
                     <th>Action</th>
                     
@@ -33,7 +34,7 @@
                         <td>{{ $item->amount }}</td>
                         <td>{{ $item->branch }}</td>
                         <td>{{ $item->notes }}</td>
-                        
+                        <td>{{ $item->mobile_no }}</td>
                         <td>{{ $item->created_at }}</td>
                         <td>
                             <button type="button" class="btn btn-primary edit-towing" title="Edit" data-toggle="modal" data-target="#edit_towing" value="{{$item->id}}"><i class="fa fa-edit"></i></button>
@@ -116,10 +117,19 @@
                             </span>
 
                             <span class="col-lg-4">
+                                <div class="form-group">
+                                        <div class="notes">
+                                            <label for="notes">Notes</label>
+                                            <input type="text" name="notes" id="notes" class="form-control"/>
+                                        </div>
+                                    </div>
+                            </span>
+
+                            <span class="col-lg-4">
                                     <div class="form-group">
-                                            <div class="notes">
-                                                <label for="notes">Notes</label>
-                                                <input type="text" name="notes" id="notes" class="form-control"/>
+                                            <div class="mobile_no">
+                                                <label for="mobile_no">Contact No</label>
+                                                <input type="text" name="mobile_no" id="mobile_no" class="form-control"/>
                                             </div>
                                         </div>
                             </span>
@@ -219,6 +229,16 @@
                                             <div class="edit_notes">
                                                 <label for="edit_notes">Notes</label>
                                                 <input type="text" name="edit_notes" id="edit_notes" class="form-control"/>
+
+                                            </div>
+                                        </div>
+                                </span>
+
+                                <span class="col-lg-4">
+                                    <div class="form-group">
+                                            <div class="edit_mobile_no">
+                                                <label for="edit_mobile_no">Contact No</label>
+                                                <input type="text" name="edit_mobile_no" id="edit_mobile_no" class="form-control"/>
 
                                             </div>
                                         </div>

@@ -21,6 +21,7 @@ class CreateTowingTable extends Migration
             $table->string('lat')->nullable();
             $table->string('lng')->nullable();
             $table->bigInteger('amount')->nullable();
+            $table->string('mobile_no')->nullable();
             $table->string('branch')->nullable();
             $table->string('notes')->nullable();
             $table->timestamps();

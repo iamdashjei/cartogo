@@ -63,6 +63,8 @@ $(document).on('click','.edit-carwash',function(){
             $('#edit_latitude').val(result[0].lat);
             $('#edit_longitude').val(result[0].lng);
             $('#edit_amount').val(result[0].amount);
+            $('#edit_mobile_no').val(result[0].mobile_no);
+            
             $('#edit_payment_method').val(result[0].payment_method).change();
            //console.log('Result' + JSON.stringify(result));
 

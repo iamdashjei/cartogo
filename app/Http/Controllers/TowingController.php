@@ -47,22 +47,23 @@ class TowingController extends Controller
             'address'      => 'required|string',
             'amount'      => 'required',
             'notes'      => 'required|string',
-            'branch'      => 'required|string'
+            'branch'      => 'required|string',
+            'mobile_no'      => 'required|string'
         ]);
 
         if($validator->passes())
         {
-            $mechanic = new Towing;
-            $mechanic->company = $request->company;
-            $mechanic->lat = $request->latitude;
-            $mechanic->lng = $request->longitude;
-            $mechanic->address = $request->address;
-            $mechanic->branch = $request->branch;
-            $mechanic->amount = $request->amount;
-            $mechanic->notes = $request->notes;
-            
+            $towing = new Towing;
+            $towing->company = $request->company;
+            $towing->lat = $request->latitude;
+            $towing->lng = $request->longitude;
+            $towing->address = $request->address;
+            $towing->branch = $request->branch;
+            $towing->amount = $request->amount;
+            $towing->notes = $request->notes;
+            $towing->mobile_no = $request->mobile_no;
 
-            if($mechanic->save()){
+            if($towing->save()){
                 $message = ['success' => true];
             } else {
                 $message = ['success' => false];
@@ -123,7 +124,7 @@ class TowingController extends Controller
     public function get_towing_details(Request $request)
     {
         $towing = DB::table('towings')
-        ->select('towings.id', 'towings.company', 'towings.address', 'towings.amount', 'towings.lat', 'towings.lng',  'towings.branch', 'towings.notes')
+        ->select('towings.id', 'towings.company', 'towings.address', 'towings.amount', 'towings.lat', 'towings.lng',  'towings.branch', 'towings.notes', 'towings.mobile_no')
         ->where('towings.id', $request->id)->get();
         return json_decode($towing);
     }
@@ -138,22 +139,24 @@ class TowingController extends Controller
             'edit_address'      => 'required|string',
             'edit_amount'      => 'required',
             'edit_notes'      => 'required|string',
-            'edit_branch'      => 'required|string'
+            'edit_branch'      => 'required|string',
+            'edit_mobile_no'      => 'required|string'
         ]);
 
         if($validator->passes())
         {
-            $mechanic = Towing::find($request->id);
-            $mechanic->company = $request->edit_company;
-            $mechanic->lat = $request->edit_latitude;
-            $mechanic->lng = $request->edit_longitude;
-            $mechanic->address = $request->edit_address;
-            $mechanic->branch = $request->edit_branch;
-            $mechanic->amount = $request->edit_amount;
-            $mechanic->notes = $request->edit_notes;
+            $towing = Towing::find($request->id);
+            $towing->company = $request->edit_company;
+            $towing->lat = $request->edit_latitude;
+            $towing->lng = $request->edit_longitude;
+            $towing->address = $request->edit_address;
+            $towing->branch = $request->edit_branch;
+            $towing->amount = $request->edit_amount;
+            $towing->notes = $request->edit_notes;
+            $towing->mobile_no = $request->edit_mobile_no;
             
 
-            if($mechanic->save()){
+            if($towing->save()){
                 $message = ['success' => true];
             } else {
                 $message = ['success' => false];
@@ -169,7 +172,7 @@ class TowingController extends Controller
     public function get_all_towing(Request $request)
     {
         $towing = DB::table('towings')
-        ->select('towings.id', 'towings.company', 'towings.address', 'towings.amount', 'towings.lat', 'towings.lng',  'towings.branch', 'towings.notes')
+        ->select('towings.id', 'towings.company', 'towings.address', 'towings.amount', 'towings.lat', 'towings.lng',  'towings.branch', 'towings.notes', 'towings.mobile_no')
         ->get();
         return json_decode($towing);
     }
