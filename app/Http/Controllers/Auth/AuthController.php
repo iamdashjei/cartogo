@@ -82,7 +82,12 @@ class AuthController extends Controller
         // $user->password = bcrypt($request->password);
         // $user->activated = 1;
         // $user->save();
+
+        $tokenResult = $user->createToken('Personal Access Token');
+        $token = $tokenResult->token;
+        $token->save();
         return response()->json([
+            'access_token' => $tokenResult->accessToken,
             'message' => 'Successfully created user!',
             'email' => $user->email,
             'name' => $user->name,
