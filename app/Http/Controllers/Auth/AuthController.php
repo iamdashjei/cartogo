@@ -83,7 +83,12 @@ class AuthController extends Controller
         // $user->activated = 1;
         // $user->save();
         return response()->json([
-            'message' => 'Successfully created user!'
+            'message' => 'Successfully created user!',
+            'email' => $user->email,
+            'name' => $user->name,
+            'first_name' => $user->first_name,
+            'last_name' => $user->last_name,
+            'status' => "true"
         ], 201);
     }
     public function logout(Request $request)
@@ -91,6 +96,7 @@ class AuthController extends Controller
         $request->user()->token()->revoke();
         return response()->json([
             'message' => 'Successfully logged out'
+            
         ]);
     }
   
