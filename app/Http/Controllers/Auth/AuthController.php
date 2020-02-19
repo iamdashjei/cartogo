@@ -7,8 +7,17 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use jeremykenedy\LaravelRoles\Models\Role;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use App\Traits\ActivationTrait;
+use App\Traits\CaptchaTrait;
+use App\Traits\CaptureIpTrait;
 class AuthController extends Controller
 {
+    use ActivationTrait;
+    use CaptchaTrait;
+
     public function login(Request $request) {
         $request->validate([
             'email' => 'required|string|email',
@@ -34,10 +43,10 @@ class AuthController extends Controller
             )->toDateTimeString()
         ]);
     }
-    public function register(array $data)
+    public function register(Request $data)
     {
         $ipAddress = new CaptureIpTrait();
-        $role = Role::where('slug', '=', 'unverified')->first();
+        $role = Role::where('slug', '=', 'user')->first();
         $user = User::create([
             'name'              => $data['name'],
             'first_name'        => $data['first_name'],
@@ -46,13 +55,13 @@ class AuthController extends Controller
             'password'          => Hash::make($data['password']),
             'token'             => str_random(64),
             'signup_ip_address' => $ipAddress->getClientIp(),
-            'activated'         => !config('settings.activation'),
+            'activated'         => 1,
         ]);
 
         $user->attachRole($role);
-        $this->initiateEmailActivation($user);
+        //$this->initiateEmailActivation($user);
 
-        return $user;
+        // return $user;
 
         // $request->validate([
         //     'fName' => 'required|string',
@@ -68,9 +77,9 @@ class AuthController extends Controller
         // $user->password = bcrypt($request->password);
         // $user->activated = 1;
         // $user->save();
-        // return response()->json([
-        //     'message' => 'Successfully created user! ' . $request->all()
-        // ], 201);
+        return response()->json([
+            'message' => 'Successfully created user!'
+        ], 201);
     }
     public function logout(Request $request)
     {
