@@ -34,25 +34,43 @@ class AuthController extends Controller
             )->toDateTimeString()
         ]);
     }
-    public function register(Request $request)
+    public function register(array $data)
     {
-        $request->validate([
-            'fName' => 'required|string',
-            'lName' => 'required|string',
-            'email' => 'required|string|email|unique:users',
-            'password' => 'required|string'
+        $ipAddress = new CaptureIpTrait();
+        $role = Role::where('slug', '=', 'unverified')->first();
+        $user = User::create([
+            'name'              => $data['name'],
+            'first_name'        => $data['first_name'],
+            'last_name'         => $data['last_name'],
+            'email'             => $data['email'],
+            'password'          => Hash::make($data['password']),
+            'token'             => str_random(64),
+            'signup_ip_address' => $ipAddress->getClientIp(),
+            'activated'         => !config('settings.activation'),
         ]);
-        $user = new User;
-        $user->name = $request->fName." ". $request->lName;
-        $user->first_name = $request->fName;
-        $user->last_name = $request->lName;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-        $user->activated = 1;
-        $user->save();
-        return response()->json([
-            'message' => 'Successfully created user! ' . $request->all()
-        ], 201);
+
+        $user->attachRole($role);
+        $this->initiateEmailActivation($user);
+
+        return $user;
+
+        // $request->validate([
+        //     'fName' => 'required|string',
+        //     'lName' => 'required|string',
+        //     'email' => 'required|string|email|unique:users',
+        //     'password' => 'required|string'
+        // ]);
+        // $user = new User;
+        // $user->name = $request->fName." ". $request->lName;
+        // $user->first_name = $request->fName;
+        // $user->last_name = $request->lName;
+        // $user->email = $request->email;
+        // $user->password = bcrypt($request->password);
+        // $user->activated = 1;
+        // $user->save();
+        // return response()->json([
+        //     'message' => 'Successfully created user! ' . $request->all()
+        // ], 201);
     }
     public function logout(Request $request)
     {
