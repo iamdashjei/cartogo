@@ -50,7 +50,7 @@ class AuthController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
         return response()->json([
-            'message' => 'Successfully created user!'
+            'message' => 'Successfully created user! ' . $request->all()
         ], 201);
     }
     public function logout(Request $request)
