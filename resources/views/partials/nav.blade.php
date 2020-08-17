@@ -34,22 +34,22 @@
                             <a class="dropdown-item {{ Request::is('themes','themes/create') ? 'active' : null }}" href="{{ url('/themes') }}">
                                 {!! trans('titles.adminThemesList') !!}
                             </a>
-                            <div class="dropdown-divider"></div>
+                            {{-- <div class="dropdown-divider"></div>
                             <a class="dropdown-item {{ Request::is('logs') ? 'active' : null }}" href="{{ url('/logs') }}">
                                 {!! trans('titles.adminLogs') !!}
-                            </a>
+                            </a> --}}
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item {{ Request::is('activity') ? 'active' : null }}" href="{{ url('/activity') }}">
                                 {!! trans('titles.adminActivity') !!}
                             </a>
-                            <div class="dropdown-divider"></div>
+                            {{-- <div class="dropdown-divider"></div>
                             <a class="dropdown-item {{ Request::is('phpinfo') ? 'active' : null }}" href="{{ url('/phpinfo') }}">
                                 {!! trans('titles.adminPHP') !!}
-                            </a>
-                            <div class="dropdown-divider"></div>
+                            </a> --}}
+                            {{-- <div class="dropdown-divider"></div>
                             <a class="dropdown-item {{ Request::is('routes') ? 'active' : null }}" href="{{ url('/routes') }}">
                                 {!! trans('titles.adminRoutes') !!}
-                            </a>
+                            </a> --}}
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item {{ Request::is('active-users') ? 'active' : null }}" href="{{ url('/active-users') }}">
                                 {!! trans('titles.activeUsers') !!}
